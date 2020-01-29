@@ -10,7 +10,7 @@ export class BeerService {
 
 
 async getAll(){
-  let data = await this.httpService.get("beers"):
+  let data = await this.httpService.get("beers");
   return data;
 }
 

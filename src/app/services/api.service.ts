@@ -10,9 +10,9 @@ export class ApiService {
 
   url = "https://api.punkapi.com/v2/beers"
 
-  async get(path, options) {
+  async get(path) {
     return await this.httpClient.get
-      (this.url + path, options).toPromise();
+      (this.url + path).toPromise();
   }
 
 
