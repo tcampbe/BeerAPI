@@ -1,17 +1,15 @@
-import { Injectable } from '@angular/core';
-import {ApiService} from '../services/api.service'
+import { Injectable } from "@angular/core";
+import { ApiService } from "../services/api.service";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
+
 export class BeerService {
+  constructor(private apiService: ApiService) {}
 
-  constructor(private httpService: ApiService) { }
-
-
-async getAll(){
-  let data = await this.httpService.get("beers");
-  return data;
-}
-
+  async getAll() {
+    let data = await this.apiService.get("beers");
+    return data;
+  }
 }

@@ -1,19 +1,16 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ApiService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  url = "https://api.punkapi.com/v2/beers"
+  url = "https://api.punkapi.com/v2/beers";
 
   async get(path) {
-    return await this.httpClient.get
+    return await this.httpClient.get<any>
       (this.url + path).toPromise();
   }
-
-
 }
